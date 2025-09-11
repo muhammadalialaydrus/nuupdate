@@ -1,0 +1,100 @@
+{% extends 'layouts/default.twig' %}
+{% set body_class = 'login-register-page' %}
+{% set head_title = 'Login' %}
+{% block page %}
+
+			<div class="page-content">
+				<section class="login-area">
+					<div class="login">
+						<div class="wrapper" data-aos="zoom-in">
+							<div class="logo-area">
+								<figure>
+									<img src="assets/img/logo-full-blue.png" alt="">
+								</figure>
+							</div>
+							<div class="custom-form">
+								<form class="form">
+									<div class="form-row">
+										<div class="form-group col-12">
+											<label class="label-form font-alt-semibold" for="emailField">Email</label>
+											<input type="email" class="form-control" id="emailField" name="email" placeholder="Input Email Here..." required>
+										</div>
+										<div class="form-group col-12">
+											<label class="label-form font-alt-semibold" for="passwordField">Password</label>
+											<div class="wrapper-input">
+												<input type="password" class="form-control" id="passwordField" name="password" placeholder="Input Password Here..." required>
+												<span class="icon-password fa fa-eye" onclick="showPassword()"></span>
+											</div>
+										</div>
+										<div class="form-group col-12">
+											<div class="row no-gutters justify-content-between">
+												<div class="form-check col-6 col-sm-4 col-md-6 col-xl-4">
+													<input class="form-check-input" type="checkbox" name="exampleTypeCheckbox" id="rememberMe" value="Option 1">
+													<label class="form-check-label font-pop-semibold" for="rememberMe">Ingat saya</label>
+												</div>
+												<div class="form-check col-6 col-sm-4 col-md-6 col-xl-4">
+													<div class="forgot-password">
+														<a href="#" class="font-pop-semibold">Lupa Password</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="button-area">
+										<button class="button full-width font-alt-semibold" type="submit">Masuk</button>
+									</div>
+								</form>
+							</div>
+							<div class="nav-bottom">
+								<div class="info-login">
+									<h6 class="font-pop-regular">atau masuk dengan</h6>
+								</div>
+								<div class="button-area">
+									<a href="#" target="_blank">
+										<div class="wrapper-button">
+											<span class="icon google"></span>
+											<span class="text font-alt-semibold">Continue With Google</span>
+										</div>
+									</a>
+									<a href="#" target="_blank">
+										<div class="wrapper-button">
+											<span class="icon apple"></span>
+											<span class="text font-alt-semibold">Continue With Apple</span>
+										</div>
+									</a>
+								</div>
+								<h5 class="account font-pop-regular">
+									Belum punya akun?
+									<a href="register.html" class="font-pop-semibold">Daftar</a>
+								</h6>
+								<h6 class="tnc font-pop-regular">
+									Dengan Melanjutkan, Saya menyetujui <a href="#">Syarat dan Ketentuan</a><br>
+									serta <a href="#">Kebijakan Privasi</a>.
+								</h6>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<script>
+				function showPassword() {
+					var x = document.getElementById("passwordField");
+					if (x.type === "password") {
+						x.type = "text";
+					} else {
+						x.type = "password";
+					}
+				}
+
+				function reTypePassword() {
+					var x = document.getElementById("retypePasswordField");
+					if (x.type === "password") {
+						x.type = "text";
+					} else {
+						x.type = "password";
+					}
+				}
+			</script>
+
+{% endblock %}
