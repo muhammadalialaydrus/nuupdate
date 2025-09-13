@@ -109,8 +109,14 @@
 	}
 
 	+ .no-post,
+	+ .thumbnails,
+	+ .subtitle-section,
 	+ .thumbnail-list {
 		margin-top: 32px;
+	}
+
+	+ .subtitle-section {
+		margin-top: 48px;
 	}
 }
 

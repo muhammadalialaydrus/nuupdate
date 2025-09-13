@@ -746,13 +746,10 @@
 
 		.info-area {
 			h6 {
-				font-size: 0.9em;
-				font-style: italic;
-				color: $text-semi-blue;
-				
-				@include breakpoint(tablet) {
-					font-size: 1em;
-				}
+				font-size: 0.85em;
+				text-transform: uppercase;
+				letter-spacing: 0.5pt;
+				color: #7ca1d2;
 
 				+ h4 {
 					margin-top: 8px;
@@ -853,7 +850,7 @@
 		h6 {
 			font-size: 0.85rem;
 			text-transform: uppercase;
-			color: $text-semi-blue;
+			color: #7ca1d2;
 			transition: all 0.3s linear;
 
 			+ h5 {

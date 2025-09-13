@@ -284,6 +284,62 @@ b {
 	}
 }
 
+.subtitle-section {
+	position: relative;
+	margin-bottom: 32px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	
+	// @include breakpoint(tablet) {
+	// 	margin-bottom: 3rem;
+	// }
+
+	h2 {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		line-height: 100%;
+		color: $title-color;
+		background-color: $white;
+		padding-right: 16px;
+		max-width: 67%;
+		
+		@include breakpoint(mobile-iphone) {
+			font-size: 1.4rem;
+			max-width: 50%;
+		}
+
+		@include breakpoint(tablet) {
+			font-size: 1.8rem;
+			padding-right: 24px;
+			max-width: 70%;
+		}
+
+		@include breakpoint(wide) {
+			padding-right: 32px;
+			max-width: 80%;
+		}
+
+		@include breakpoint(laptop) {
+			font-size: 1.9rem;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 50%;
+			bottom: initial;
+			left: 1px;
+			right: 1px;
+			width: 100%;
+			height: 1px;
+			background-color: $border-gray;
+		}
+	}
+}
+
 .thumbnail-info {
 	padding: 0.5rem;
 	
@@ -484,6 +540,36 @@ b {
 		pointer-events: visible;
 	}
 
+	&.add-button {
+		bottom: 84px;
+		opacity: 1;
+		visibility: visible;
+		pointer-events: visible;
+
+		.button-inside {
+			font-size: 2.4rem;
+			text-transform: uppercase;
+			padding: 10px 8px;
+			width: 60px;
+			height: 60px;
+
+			background-color: $tosca;
+
+			@include breakpoint(tablet) {
+				font-size: 3rem;
+				padding: 16px 10px;
+				width: 80px;
+				height: 80px;
+			}
+
+			&:hover {
+				color: $white;
+				// background-color: $tosca;
+				background-color: $blue;
+			}
+		}
+	}
+
 	&.inquiry-button {
 		bottom: 84px;
 
@@ -610,8 +696,14 @@ b {
 			}
 		}
 
+		strong {
+			font-weight: normal;
+			line-height: 70%;
+		}
+
 		small {
-			font-size: 50%;
+			font-size: 34%;
+			letter-spacing: 0.5pt;
 		}
 	}
 
@@ -888,6 +980,7 @@ b {
 			text-transform: uppercase;
 
 			+ .sidebar-list,
+			+ .thumbnails,
 			+ .thumbnail-list {
 				margin-top: 24px;
 			}
@@ -899,7 +992,7 @@ b {
 
 			&.nested {
 				padding-left: 20px;
-				border-top: 1px solid #dedede;
+				border-top: 1px solid #CEDCE9;
 
 				li {
 					position: relative;
@@ -912,7 +1005,7 @@ b {
 						left: -20px;
 						right: initial;
 						width: 1px;
-						background-color: #b5b5b5;
+						background-color: #CEDCE9;
 					}
 
 					&:after {
@@ -924,7 +1017,7 @@ b {
 						right: initial;
 						width: 10px;
 						height: 1px;
-						background-color: #b5b5b5;
+						background-color: #CEDCE9;
 						transform: translate(0, -50%);
 					}
 
@@ -932,6 +1025,15 @@ b {
 						&:before {
 							height: calc(50% + 1px);
 						}
+					}
+				}
+
+				a {
+					font-size: 0.9em;
+					color: $semi-grey;
+
+					&:hover {
+						color: $blue;
 					}
 				}
 			}
@@ -975,11 +1077,85 @@ b {
 					}
 				}
 
+				&[aria-expanded="true"] {
+					.icon {
+						&:before {
+							content: "\f106";
+						}
+					}
+				}
 			}
 		}
 
 		+ .sidebar-group {
 			margin-top: 32px;
+		}
+	}
+
+	.thumbnails {
+		.thumbnail-list {
+			.image-area {
+				flex: 0 0 100px;
+				max-width: 100px;
+
+				figure {
+					.images {
+						padding: 0 0 100%;
+					}
+				}
+			}
+
+			.info-area {
+				@include breakpoint(desktop) {
+					order: 0;
+				}
+
+				.title-thumbs {
+					font-size: 1em;
+					
+					@include breakpoint(tablet) {
+						font-size: 1.2em;
+					}
+					
+					@include breakpoint(desktop) {
+						font-size: 1.1em;
+					}
+
+					@include breakpoint(laptop) {
+						font-size: 1em;
+					}
+				}
+
+				.desc-thumbs {
+					@include breakpoint(desktop) {
+						font-size: 0.8em;
+					}
+				}
+
+				.auth-date {
+					h6 {
+						@include breakpoint(desktop) {
+							max-width: 83px;
+						}
+
+						@include breakpoint(laptop) {
+							max-width: 88px;
+						}
+					}
+
+					.auth-name {
+						@include breakpoint(laptop) {
+							max-width: 150px;
+						}
+					}
+				}
+			}
+
+			.thumbnail-item {
+				+.thumbnail-item {
+					border-color: #CEDCE9;
+				}
+			}
 		}
 	}
 
@@ -1634,10 +1810,6 @@ b {
 				}
 			}
 		}
-
-		+ .paging-area {
-			margin-top: 48px;
-		}
 	}
 
 	.thumbnail-medium {
@@ -2030,71 +2202,8 @@ b {
 		}
 	}
 
-	.sidebar-news {
-		.thumbnail-list {
-			.image-area {
-				flex: 0 0 100px;
-				max-width: 100px;
-
-				figure {
-					.images {
-						padding: 0 0 100%;
-					}
-				}
-			}
-
-			.info-area {
-				@include breakpoint(desktop) {
-					order: 0;
-				}
-
-				.title-thumbs {
-					font-size: 1em;
-					
-					@include breakpoint(tablet) {
-						font-size: 1.2em;
-					}
-					
-					@include breakpoint(desktop) {
-						font-size: 1.1em;
-					}
-
-					@include breakpoint(laptop) {
-						font-size: 1em;
-					}
-				}
-
-				.desc-thumbs {
-					@include breakpoint(desktop) {
-						font-size: 0.8em;
-					}
-				}
-
-				.auth-date {
-					h6 {
-						@include breakpoint(desktop) {
-							max-width: 83px;
-						}
-
-						@include breakpoint(laptop) {
-							max-width: 88px;
-						}
-					}
-
-					.auth-name {
-						@include breakpoint(laptop) {
-							max-width: 150px;
-						}
-					}
-				}
-			}
-
-			.thumbnail-item {
-				+.thumbnail-item {
-					border-color: #CEDCE9;
-				}
-			}
-		}
+	+ .paging-area {
+		margin-top: 48px;
 	}
 }
 

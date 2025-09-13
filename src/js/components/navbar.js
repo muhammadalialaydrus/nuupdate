@@ -9,10 +9,10 @@ function stickyHeader() {
 		
 		if(st < 100) {
 			$('body').removeClass('on-scroll');
-			$('.floating-button').removeClass('show');
+			$('.floating-button.back-top').removeClass('show');
 		} else {
 			$('body').addClass('on-scroll');
-			$('.floating-button').addClass('show');
+			$('.floating-button.back-top').addClass('show');
 		}
 
 		lastScroll = st;
@@ -70,9 +70,9 @@ $(function() {
 
 
 
-	$(".dropdown-profile .custom-nav-profile").click(function(){
-		$(this).toggleClass("showing").siblings(".dropdown-menu").toggle();
-	});
+	// $(".dropdown-profile .custom-nav-profile").click(function(){
+	// 	$(this).toggleClass("showing").siblings(".dropdown-menu").toggle();
+	// });
 
 	$(".toggle-down").click(function(){
 		$(this).toggleClass("toggleDrawer").parents(".header-fix").toggleClass("show-menu").parents().find(".burger-menu").toggleClass("show").siblings(".backdrop-global").toggleClass("show");
