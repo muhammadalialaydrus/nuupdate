@@ -53,6 +53,7 @@ $(function() {
 	$(".bookmark-likes .icon-text a").click(function(){
 		$(this).toggleClass("active");
 	});
+	
 
 	// $(window).on('resize', function(){
 	// 	$('.progressive-image').progressiveImage();

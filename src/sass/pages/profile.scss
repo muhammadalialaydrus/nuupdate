@@ -1,59 +1,3 @@
-.profile-listing {
-	.thumbnails {
-		.thumbnail-default {
-			.info-area {
-				.auth-date {
-					position: relative;
-					justify-content: space-between;
-
-					&:before {
-						content: "";
-						width: 100%;
-						height: 1px;
-						background-color: $border-gray;
-						position: absolute;
-						z-index: -1;
-						top: 50%;
-						bottom: initial;
-						left: 1px;
-						right: 1px;
-						width: 100%;
-						height: 1px;
-					}
-					
-					li {
-						&:first-child {
-							h6 {
-								padding-right: 16px;
-							}
-						}
-
-						&:last-child {
-							h6 {
-								padding-left: 16px;
-							}
-						}
-
-						+ li {
-							margin: 0;
-							padding: 0;
-
-							&:before {
-								display: none;
-							}
-						}
-					}
-
-					h6 {
-						max-width: 140px;
-						background-color: $white;
-					}
-				}
-			}
-		}
-	}
-}
-
 .profile-card {
 	position: relative;
 	text-align: center;
@@ -346,6 +290,12 @@
 	}
 
 	+ .post-profile {
-		margin-top: 48px;
+		margin-top: 5rem;
+	}
+}
+
+.table-area {
+	+ .thumb-post {
+		margin-top: 5rem;
 	}
 }

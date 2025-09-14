@@ -1,7 +1,7 @@
 body {
 	&.on-scroll {
 		.header-fix {
-			margin-top: 0;
+			padding-top: 0;
 			// background-color: rgba($white, 0.5);
 			box-shadow: 0 1px 3px 0 rgba(27,27,27,0.1), 0 4px 8px 0 rgba(27,27,27,0.1);
 			// backdrop-filter: saturate(180%) blur(20px);
@@ -110,13 +110,13 @@ body {
 	bottom: initial;
 	width: 100%;
 	z-index: 3;
-	margin-top: 16px;
+	padding-top: 16px;
 	transition: all 0.3s linear;
 	background-color: rgba($white, 0.5);
 	backdrop-filter: saturate(180%) blur(20px);
 	
 	@include breakpoint(desktop) {
-		margin-top: 32px;
+		padding-top: 32px;
 	}
 
 	&.show-menu,
@@ -411,7 +411,9 @@ body {
 			overflow: hidden;
 			left: initial;
 			right: 0;
+			min-width: 170px;
 			border-radius: 16px;
+			box-shadow: 0 1px 3px 0 rgba(27,27,27,0.1),0 4px 8px 0 rgba(27,27,27,0.1);
 
 			.dropdown-item {
 				color: $white;

@@ -28,13 +28,14 @@
 			}
 		}
 
+		&:disabled {
+			font-style: italic;
+			color: $text-semi-blue;
+			background-color: #dee6ef;
+		}
+
 		// &:focus {
 		// 	box-shadow: none;	
-		// }
-
-		// &::placeholder {
-		// 	color: #a2a2a2;
-		// 	font-style: italic;
 		// }
 
 		&::placeholder {
@@ -80,6 +81,21 @@
 
 	.invalid-feedback {
 		color: $red;
+	}
+
+	.upload-area {
+		.upload-wrapper {
+			+ p {
+				margin-top: 8px;
+			}
+		}
+
+		p {
+			font-size: 0.8em;
+			text-align: right;
+			font-style: italic;
+			color: #7ca1d2;
+		}
 	}
 
 	fieldset {
